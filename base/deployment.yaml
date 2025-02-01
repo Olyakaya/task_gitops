@@ -13,6 +13,8 @@ spec:
     spec:
       nodeSelector:
         agentpool: workloadpool
+      imagePullSecrets:
+        - name: acr-secret # Add this line
       containers:
         - name: myapp
           image: task10cr.azurecr.io/myapp:v1
