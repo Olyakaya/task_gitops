@@ -6,4 +6,4 @@ metadata:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
     argocd.argoproj.io/sync-options: Replace
 data:
-  GREETING_MESSAGE: "Hello, Azure! deploy by Argo"
+  GREETING_MESSAGE: "Hello, Azure!"
