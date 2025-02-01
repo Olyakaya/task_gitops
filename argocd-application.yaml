@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/Olyakaya/task_gitops.git
     targetRevision: main
-    path: base # Use k8s/overlays/dev for development
+    path: base
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -20,3 +20,5 @@ spec:
       selfHeal: true
     syncOptions:
       - Replace=true
+      - ApplyOutOfSyncOnly=true # Add this to force sync on ConfigMap changes
+      - RespectIgnoreDifferences=true

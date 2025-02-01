@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: '{{ .Files.Get "base/configmap.yaml" | sha256sum }}'
+        rollme: { { randAlphaNum 5 | quote } }
       labels:
         app: myapp
     spec:
