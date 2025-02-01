@@ -11,7 +11,7 @@ spec:
     path: overlays/dev # Use k8s/overlays/dev for development
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: myapp
   syncPolicy:
     automated:
       prune: true
