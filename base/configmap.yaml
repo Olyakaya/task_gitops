@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: myapp-config
 data:
-  GREETING_MESSAGE: "Hello, Azure! It's first deploy by Argo"
+  GREETING_MESSAGE: "Hello, Azure! It's second deploy by Argo"

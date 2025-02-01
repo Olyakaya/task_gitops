@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Olyakaya/task_gitops.git
     targetRevision: main
-    path: overlays/dev # Use k8s/overlays/dev for development
+    path: base # Use k8s/overlays/dev for development
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
