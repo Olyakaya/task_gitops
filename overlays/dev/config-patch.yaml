@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: myapp-config
 data:
-  GREETING_MESSAGE: "Hello from Development Environment!"
+  GREETING_MESSAGE: "Hello from Development Environment by ArGOcd!"
