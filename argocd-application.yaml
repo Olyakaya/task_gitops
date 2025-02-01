@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: flask-app
+  name: myapp
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-username/task10.git # Replace with your repo
+    repoURL: https://github.com/Olyakaya/task_gitops.git
     targetRevision: main
-    path: k8s/overlays/prod # Use k8s/overlays/dev for development
+    path: overlays/dev # Use k8s/overlays/dev for development
   destination:
     server: https://kubernetes.default.svc
     namespace: default

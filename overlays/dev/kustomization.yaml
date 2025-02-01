@@ -6,4 +6,4 @@ patchesStrategicMerge:
   - config-patch.yaml
 images:
   - name: task10cr.azurecr.io/myapp
-    newTag: dev
+    newTag: v1
