@@ -8,13 +8,15 @@ spec:
       app: myapp
   template:
     metadata:
+      annotations:
+        checksum/config: '{{ .Files.Get "base/configmap.yaml" | sha256sum }}'
       labels:
         app: myapp
     spec:
       nodeSelector:
         agentpool: workloadpool
       imagePullSecrets:
-        - name: acr-secret # Add this line
+        - name: acr-secret
       containers:
         - name: myapp
           image: task10cr.azurecr.io/myapp:v1
