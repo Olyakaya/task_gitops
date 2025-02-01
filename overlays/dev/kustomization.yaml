@@ -1,9 +1,6 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-images:
-  - name: task10cr.azurecr.io/myapp
-    newTag: v1
-resources:
-  - ../../base
-patches:
-  - path: config-patch.yaml
+configMapGenerator:
+  - name: myapp-config
+    literals:
+      - GREETING_MESSAGE="Hello from Development Environment by ArGOcd!"
+generatorOptions:
+  disableNameSuffixHash: false
