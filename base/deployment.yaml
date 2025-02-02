@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       annotations:
-        configmap-hash: ${CONFIGMAP_HASH}
+        configmapHash: "{{ .Values.configmapHash }}"
       labels:
         app: myapp
     spec:
