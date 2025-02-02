@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
-  - configmap.yaml
 
 configMapGenerator:
   - name: myapp-config
+    behavior: replace # This ensures it replaces any existing ConfigMap
     literals:
-      - GREETING_MESSAGE="Hello, Azure! deploy by Argo"
+      - GREETING_MESSAGE=Hello, Azure! deploy by Argo
