@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       annotations:
-        rollme: { { randAlphaNum 5 | quote } }
+        configmap-hash: ${CONFIGMAP_HASH}
       labels:
         app: myapp
     spec:
