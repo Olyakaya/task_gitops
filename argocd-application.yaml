@@ -22,3 +22,4 @@ spec:
       - Replace=true
       - ApplyOutOfSyncOnly=true # Add this to force sync on ConfigMap changes
       - RespectIgnoreDifferences=true
+      - CreateNamespace=true
