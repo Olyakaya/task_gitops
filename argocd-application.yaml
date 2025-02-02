@@ -18,6 +18,9 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - Replace=true
+      - CreateNamespace=true
 operation:
   sync:
     resources:
@@ -26,9 +29,3 @@ operation:
     syncStrategy:
       apply:
         force: true
-
-    syncOptions:
-      - Replace=true
-      - ApplyOutOfSyncOnly=true # Add this to force sync on ConfigMap changes
-      - RespectIgnoreDifferences=true
-      - CreateNamespace=true
