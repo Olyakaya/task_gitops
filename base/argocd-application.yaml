@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Olyakaya/task_gitops.git
-    targetRevision: main
+    targetRevision: HEAD
     path: base
   destination:
     server: https://kubernetes.default.svc
@@ -19,13 +19,7 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - Replace=true
       - CreateNamespace=true
-operation:
-  sync:
-    resources:
-      - kind: Namespace
-        name: myapp
-    syncStrategy:
-      apply:
-        force: true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+      - Replace=true
