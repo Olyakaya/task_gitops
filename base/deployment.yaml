@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        configmapHash: "{{ .Values.configmapHash }}"
+   #     configmapHash: "{{ .Values.configmapHash }}"
       labels:
         app: myapp
     spec:
@@ -20,7 +20,7 @@ spec:
         - name: acr-secret
       containers:
         - name: myapp
-          image: task10cr.azurecr.io/myapp:v1
+          image: olhabuchynskacr.azurecr.io/myapp:v1
           ports:
             - containerPort: 5000
           envFrom:
