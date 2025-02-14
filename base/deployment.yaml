@@ -18,6 +18,13 @@ spec:
         agentpool: workloadpool
       imagePullSecrets:
         - name: acr-secret
+      volumes:
+        - name: secrets-store
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "azure-keyvault-secrets"
       containers:
         - name: myapp
           image: olhabuchynskacr.azurecr.io/myapp:v1
@@ -35,3 +42,8 @@ spec:
               port: 5000
             initialDelaySeconds: 3
             periodSeconds: 5
+          volumeMounts:
+            - name: secrets-store
+              mountPath: "/mnt/secrets"
+              readOnly: true
+
